@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="bai1">
+    <div ng-controller='info'>
+        <img src="{{image}}" alt="">
+        <div>Họ và tên: {{name}}</div>
+        <div>ngày sinh: {{birthDay}}</div>
+        <div>giới tính: {{gender}}</div>
+        <div>điểm trung bình: {{mark}}</div>
+    </div>
+    <script>
+        const app = angular.module('bai1', [])
+        app.controller('info', ($scope) => {
+            $scope.image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmqgHTSTVpu_DXNs9-qqIzzhGYz3G1IpTJYA&usqp=CAU'
+            $scope.name = 'nguyen long'
+            $scope.birthDay = '10/1999'
+            $scope.gender = 'nam'
+            $scope.mark = 2
+        })
+    </script>
+</body>
+
+</html>

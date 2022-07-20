@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="bai5">
+    <div ng-controller='info'>
+        <div>
+            tên
+            <input type="text" ng-model="name">
+        </div>
+        <div>
+            ngày sinh
+            <input type="text" ng-model="birthDay">
+        </div>
+        <div>
+            giới tính
+            <select ng-model="gender">
+                <option value="nam">nam</option>
+                <option value="nữ">nữ</option>
+            </select>
+        </div>
+        <div>
+            điểm
+            <input type="value" ng-model="mark">
+        </div>
+        <div>
+            học lực
+            <input type="text" value="{{kqua}}" disabled>
+        </div>
+        <button ng-click="checked()">check</button>
+    </div>
+    <script>
+        const app = angular.module('bai5', [])
+        app.controller('info', ($scope) => {
+            $scope.image = ''
+            $scope.name = ''
+            $scope.birthDay = ''
+            $scope.gender = ''
+            $scope.mark = ''
+            $scope.kqua = ''
+            $scope.checked = () => {
+                $scope.kqua = $scope.mark >= 5 ? 'đạt' : 'trượt'
+            }
+        })
+    </script>
+</body>
+
+</html>

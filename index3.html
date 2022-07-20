@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body ng-app="bai3">
+    <table ng-controller='info' class="table">
+        <thead>
+            <tr>
+                <th>ảnh</th>
+                <th>tên</th>
+                <th>ngày sinh</th>
+                <th>giới tính</th>
+                <th>điểm trung bình</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat = 'info in infors'>
+            <tr>
+                <td><img src="{{info.image}}" alt=""></td>
+                <td>{{info.name}}</td>
+                <td>{{info.birthDay}}</td>
+                <td>{{info.gender}}</td>
+                <td>{{info.mark}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const app = angular.module('bai3', [])
+        app.controller('info', ($scope) => {
+            $scope.infors = [{
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmqgHTSTVpu_DXNs9-qqIzzhGYz3G1IpTJYA&usqp=CAU',
+                name: 'nguyen long1',
+                birthDay: '10/1999',
+                gender: 'nam',
+                mark: 2,
+            }, {
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmqgHTSTVpu_DXNs9-qqIzzhGYz3G1IpTJYA&usqp=CAU',
+                name: 'nguyen long2',
+                birthDay: '10/1998',
+                gender: 'nam',
+                mark: 3,
+            }, {
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmqgHTSTVpu_DXNs9-qqIzzhGYz3G1IpTJYA&usqp=CAU',
+                name: 'nguyen long3',
+                birthDay: '10/1997',
+                gender: 'nam',
+                mark: 4,
+            }]
+        })
+    </script>
+</body>
+
+</html>
